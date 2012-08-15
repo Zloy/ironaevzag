@@ -23,4 +23,4 @@ https://github.com/Zloy/ironaevzag
 
 При перемещении в поле 2 от одного значения к другому должен меняться текст в поле 3.
 
-![эскиз страницы](https://github.com/Zloy/ironaevzag/blob/master/doc/basic_translate_sketch.png)
+![эскиз страницы](https://github.com/Zloy/ironaevzag/blob/master/doc/basic_translate_sketch.png?raw=true)
