@@ -1,25 +1,59 @@
-# ironaevzag 
-
-Осетинско-русский онлайн словарь Таболова С.А.
+# Ironaevzag 
 
 https://github.com/Zloy/ironaevzag
+[ironaevzag.1gb.ru](http://ironaevzag.1gb.ru)
 
-## Цель
+The application name **Ironaevzag** is combined with words **Iron* and **Aevzag* - *Ossetian* and *Language* in Ossetian. That application is an online Russian to Ossetian dictionary built to conduct experiments with UI controls in the field of usability.
 
-* Перенести в онлайн [словарь Таболова С.А на движке mDict от Затворницкого А.П.](http://alex-zatv.narod.ru/mDict/index.html)
-* Добавить функциональность:
-  * поиска похожих (одонокоренных, с одинаковыми суффиксами и приставками) слов
-  * помощи в заучивании слов наизусть
-  * поиска слов в переводах на осетинский
 
-## Сценарий использования 
+## How to use, main features
 
-### Перевод с русского на осетинский
+On the main page there are: 
 
-Пользователь заходит на сайт и начинает вводить в поле ввода 1 интересующее его слово. В нем работает автодополнение. При выборе одного из предложенных значений ниже в поле 2 отображается список слов, начинающихся с выбранного слова. Например,если выбрано слово _год_, то в поле 2 должны отображаться слова и выражения: _год, год за годом, годиться, годичный_ и т.д. При этом фокус перемещается на первое значение в поле 2 - на слово _год_.
+1. The filter inpurt 
+2. The filtered words list
+3. The selected word translation area
 
-А в поле 3 при этом должен отобразиться перевод слова.
+![Скриншот страницы словаря](https://github.com/Zloy/ironaevzag/blob/master/doc/dict_layout.png?raw=true)
+When user types in the filter input, AJAX request gets *the filtered words list* and displays them beneath the filter in the vertical list.
 
-При перемещении в поле 2 от одного значения к другому должен меняться текст в поле 3.
+Pressing ArrowUP/Down keys a user can select any word from *the filtered words list*. When selected word changed in the right area *the selected word translation* appears. Some delay after the selected word is changed implemented before AJAX request triggered.
 
-![эскиз страницы](https://github.com/Zloy/ironaevzag/blob/master/doc/basic_translate_sketch.png?raw=true)
+The focus stays on the filter even when Arrow keys used. That allows the user to change the filter value anytime he wants do that with no need of selection the filter input control. 
+
+
+### Search with wildcards
+
+There are two wildcards available: **_** underscore and **%** percent characters. 
+The underscore character substitutes any single character, e.g. search for **а_** returns two character words, which start with **а**.
+The percent character substitutes a group of any characters, e.g. search for **арм%** returns seven words of different length, which start with **арм**.
+
+
+### Search in translations
+
+The search could be performed in Russian words or in Ossetian translations. To swith the search mode the user should either press F7 or to click on *the language indicator* in the right upper corner of *the filter*. When it has the value **рус** the search performs in Russian words, otherwise it has the value **ос**, and the search performs in Osettian translations.
+
+E.g. If *the language indicator* has the value **рус** and the user types in *the filter* the value **рос%** the filtered words list should contain the words:
+  * **рос**кошный
+  * **рос**кошь
+  * **рос**лый
+  * **рос**пуск
+  * **рос**сия
+  * **рос**сыпь
+  * **рос**т
+  * **рос**товщик
+  * **рос**ток
+
+E.g. If *the language indicator* has the value **ос** and the user types in *the filter* the value **æзæг** the filtered words list contains the words, which translations contain **æзæг** group of characters. The wildcards are ignored in that mode.
+
+
+## Internals
+
+Rails 3 
+The app is deployed with capistrano to VDS, 4 Nginx workers serve static assets and pass requests for dynamic content to 4 Thin worker processes.
+
+JavaScript is used to show notifications, to substitute character sent when key [`~ё] pressed from **ё** to **æ**, to retrieve selected word translation, to autochange word list when filter changes, to show/hide help page.
+  * jquery 
+  * jquery.ui
+  * jquery.jgrowl
+  * hand made jquery plugin **autocomplist**
