@@ -1,7 +1,8 @@
 # Ironaevzag 
 
-  * https://github.com/Zloy/ironaevzag
+  * [github.com/Zloy/ironaevzag]https://github.com/Zloy/ironaevzag
   * [ironaevzag.1gb.ru](http://ironaevzag.1gb.ru)
+  * [Этот текст по русски](https://github.com/Zloy/ironaevzag/blob/master/README.ru.md)
 
 The application name **Ironaevzag** is combined with words **Iron* and **Aevzag* - *Ossetian* and *Language* in Ossetian. That application is an online Russian to Ossetian dictionary built to conduct experiments with UI controls in the field of usability.
 
@@ -15,9 +16,9 @@ On the main page there are:
 3. The selected word translation
 
 ![Скриншот страницы словаря](https://github.com/Zloy/ironaevzag/blob/master/doc/dict_layout.png?raw=true)
-When user types in the filter input, AJAX request gets *the filtered words list* and displays them beneath the filter in the vertical list.
+When user types in the filter input (1.), AJAX request gets *the filtered words list* and displays them beneath the filter in the vertical list (2.).
 
-Pressing ArrowUP/Down keys a user can select any word from *the filtered words list*. When selected word changed in the right area *the selected word translation* appears. Some delay after the selected word is changed implemented before AJAX request triggered.
+Pressing ArrowUP/Down keys a user can select any word from *the filtered words list*. When selected word changed in the right area *the selected word translation* appears (3.). Some delay after the selected word is changed implemented before AJAX request triggered.
 
 The focus stays on the filter even when Arrow keys used. That allows the user to change the filter value anytime he wants do that with no need of selection the filter input control. 
 
@@ -45,14 +46,17 @@ The search could be performed in Russian words or in Ossetian translations. To s
 
 E.g. If *the language indicator* has the value **ос** and the user types in *the filter* the value **æзæг** the filtered words list contains the words, which translations contain **æзæг** group of characters. The wildcards are ignored in that mode.
 
+When the key [~`] pressed, the character 'æ' is been typed in and the search mode switches to seacrh in translations, because the character 'æ' there is in Ossetian, but not in Russian.
 
 ## Internals
 
-Rails 3 
+Ruby On Rails 3 
 The app is deployed with capistrano to VDS, 4 Nginx workers serve static assets and pass requests for dynamic content to 4 Thin worker processes.
 
-JavaScript is used to show notifications, to substitute character sent when key [`~ё] pressed from **ё** to **æ**, to retrieve selected word translation, to autochange word list when filter changes, to show/hide help page.
+JavaScript
   * jquery 
   * jquery.ui
   * jquery.jgrowl
   * hand made jquery plugin **autocomplist**
+
+Inspired by [S. Tabolov's dictionary powered by A. Zatvornitsky's utility](http://alex-zatv.narod.ru/mDict/index.html)
