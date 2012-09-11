@@ -1,8 +1,8 @@
 # Ironaevzag 
 
-  * [github.com/Zloy/ironaevzag]https://github.com/Zloy/ironaevzag
-  * [ironaevzag.1gb.ru](http://ironaevzag.1gb.ru)
   * [Этот текст по русски](https://github.com/Zloy/ironaevzag/blob/master/README.ru.md)
+  * [github.com/Zloy/ironaevzag](https://github.com/Zloy/ironaevzag)
+  * [ironaevzag.1gb.ru](http://ironaevzag.1gb.ru)
 
 The application name **Ironaevzag** is combined with words **Iron* and **Aevzag* - *Ossetian* and *Language* in Ossetian. That application is an online Russian to Ossetian dictionary built to conduct experiments with UI controls in the field of usability.
 

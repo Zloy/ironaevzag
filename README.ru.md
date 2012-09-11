@@ -1,8 +1,8 @@
 # Ironaevzag 
 
-  * [github.com/Zloy/ironaevzag]https://github.com/Zloy/ironaevzag
-  * [ironaevzag.1gb.ru](http://ironaevzag.1gb.ru)
   * [This text in English](https://github.com/Zloy/ironaevzag/blob/master/README.md)
+  * [github.com/Zloy/ironaevzag](https://github.com/Zloy/ironaevzag)
+  * [ironaevzag.1gb.ru](http://ironaevzag.1gb.ru)
 
 Название сайта **Ironaevzag** происходит от двух осетинских слов **Iron* and **Aevzag** -  *Осетинский* и *Язык*. Этот сайт является онлайн русско-осетинским словарем.
 
