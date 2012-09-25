@@ -59,4 +59,17 @@ JavaScript
   * jquery.jgrowl
   * hand made jquery plugin **autocomplist**
 
+### Testing
+
+I develop this application with BDD approach using [cucumber framework](http://cukes.info). That means that I first write a new scenario for a featire to be implemented, I mark it with @wip tag and run it with cucumber, then I develop the feature to pass the scenartio. 
+
+Cucumber with capibara and WebDriver are suitable to test even JavaScript powered features of the application.
+
+Before deploying a release version to production server I run all scenarios and fix errors if any. When all tests pass I deploy the application and feel myself peace and calm.
+
+You can see all the scenarios I use to test that application in **features** directory
+
+I recorded a short screencast which shows what does testing with cucumber looks like. See it [here](http://vimeo.com/50019107). You hardly see what happens in a browser if not watch this screencast in HD.
+
+P.S.
 Inspired by [S. Tabolov's dictionary powered by A. Zatvornitsky's utility](http://alex-zatv.narod.ru/mDict/index.html)
