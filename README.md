@@ -69,7 +69,9 @@ Before deploying a release version to production server I run all scenarios and 
 
 You can see all the scenarios I use to test that application in **features** directory
 
-I recorded a short screencast which shows what does testing with cucumber looks like. See it [here](http://vimeo.com/50019107). You hardly see what happens in a browser if not watch this screencast in HD.
+I recorded **a short screencast** which shows what does testing with cucumber looks like. See it [here](http://vimeo.com/50019107). You hardly see what happens in a browser if not watch this screencast in HD.
+
 
 P.S.
+
 Inspired by [S. Tabolov's dictionary powered by A. Zatvornitsky's utility](http://alex-zatv.narod.ru/mDict/index.html)
